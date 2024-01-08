@@ -9,5 +9,7 @@ WORKDIR /app
 # Install any dependencies specified in requirements.txt
 RUN pip install -r requirements.txt
 
+EXPOSE 8080
+
 # Define the command to run the Flask app
 CMD ["python", "app.py"]
