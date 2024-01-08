@@ -9,8 +9,5 @@ WORKDIR /app
 # Install any dependencies specified in requirements.txt
 RUN pip install -r requirements.txt
 
-# Expose the port that Flask will run on
-EXPOSE 5000
-
 # Define the command to run the Flask app
 CMD ["python", "app.py"]
