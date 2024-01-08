@@ -9,11 +9,8 @@ WORKDIR /app
 # Install any dependencies specified in requirements.txt
 RUN pip install -r requirements.txt
 
-# Expose the port the app runs on
-EXPOSE $PORT
+# Expose the port that Flask will run on
+EXPOSE 5000
 
-# Define environment variable
-ENV FLASK_APP=app.py
-
-# Run app.py when the container launches
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+# Define the command to run the Flask app
+CMD ["python", "app.py"]
