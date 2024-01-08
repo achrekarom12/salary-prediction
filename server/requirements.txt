@@ -3,6 +3,4 @@ scikit-learn
 pandas
 numpy
 matplotlib
-flask-cors
-pickle
-os
+Flask-Cors=4.0.0
