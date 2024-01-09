@@ -7,7 +7,7 @@ function App() {
 
   const handlePredict = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8080/predict", {
+      const response = await fetch("https://salary-prediction9-g5gyxv74oa-uc.a.run.app/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -20,6 +20,8 @@ function App() {
       }
 
       const result = await response.json();
+      // round of the salary to 2 decimal places
+      result.prediction = Math.round(result.prediction * 100) / 100;
       setPrediction(result.prediction);
     } catch (error) {
       console.error("Error:", error.message);
